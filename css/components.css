@@ -287,7 +287,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(27, 119, 174, 0.75);
+    background: var(--back-to-top-bg, rgba(27, 119, 174, 0.75));
     color: white;
     border: none;
     cursor: pointer;
@@ -313,9 +313,9 @@
 }
 
 .back-to-top:hover {
-    background: rgb(27, 119, 174);
     transform: translateY(-2px) scale(1.08);
-    box-shadow: 0 8px 30px rgba(27, 119, 174, 0.4);
+    background: var(--back-to-top-hover-bg, rgb(27, 119, 174));
+    box-shadow: 0 8px 30px var(--back-to-top-shadow, rgba(27, 119, 174, 0.4));
 }
 
 .back-to-top:active {
@@ -333,13 +333,12 @@
     transform: translateY(-2px);
 }
 
-[data-theme="dark"] .back-to-top {
-    background: rgba(58, 155, 213, 0.75);
+.social-link img {
+    filter: var(--icon-filter, none);
 }
 
-[data-theme="dark"] .back-to-top:hover {
-    background: rgb(58, 155, 213);
-    box-shadow: 0 8px 30px rgba(58, 155, 213, 0.4);
+.social-link:hover img {
+    filter: var(--icon-filter-hover, var(--icon-filter, none));
 }
 
 /* ===== RESPONSIVE ===== */

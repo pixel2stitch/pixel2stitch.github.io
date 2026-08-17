@@ -13,8 +13,11 @@
     --hover-bg: rgba(0, 0, 0, 0.05);
     --placeholder-bg: #e5e5ea;
     --shadow-color: rgba(0, 0, 0, 0.08);
+    --back-to-top-bg: rgba(27, 119, 174, 0.75);
+    --back-to-top-hover-bg: rgb(27, 119, 174);
+    --back-to-top-shadow: rgba(27, 119, 174, 0.4);
     --icon-filter: none;
-    --icon-filter-hover: none;
+    --icon-filter-hover: brightness(0.8);
 }
 
 [data-theme="dark"] {
@@ -31,11 +34,14 @@
     --hover-bg: rgba(255, 255, 255, 0.05);
     --placeholder-bg: #3a3a3c;
     --shadow-color: rgba(0, 0, 0, 0.3);
+    --back-to-top-bg: rgba(58, 155, 213, 0.75);
+    --back-to-top-hover-bg: rgb(58, 155, 213);
+    --back-to-top-shadow: rgba(58, 155, 213, 0.4);
     --icon-filter: brightness(1) invert(0.3);
-    --icon-filter-hover: brightness(0) invert(0.8);
+    --icon-filter-hover: brightness(1) invert(0.8);
 }
 
-/* System theme (follows OS) */
+/* System theme — dark */
 @media (prefers-color-scheme: dark) {
     [data-theme="system"] {
         --bg-primary: #1c1c1e;
@@ -51,9 +57,15 @@
         --hover-bg: rgba(255, 255, 255, 0.05);
         --placeholder-bg: #3a3a3c;
         --shadow-color: rgba(0, 0, 0, 0.3);
+        --back-to-top-bg: rgba(58, 155, 213, 0.75);
+        --back-to-top-hover-bg: rgb(58, 155, 213);
+        --back-to-top-shadow: rgba(58, 155, 213, 0.4);
+        --icon-filter: brightness(1) invert(0.3);
+        --icon-filter-hover: brightness(1) invert(0.8);
     }
 }
 
+/* System theme — light */
 @media (prefers-color-scheme: light) {
     [data-theme="system"] {
         --bg-primary: #f5f5f7;
@@ -69,5 +81,10 @@
         --hover-bg: rgba(0, 0, 0, 0.05);
         --placeholder-bg: #e5e5ea;
         --shadow-color: rgba(0, 0, 0, 0.08);
+        --back-to-top-bg: rgba(27, 119, 174, 0.75);
+        --back-to-top-hover-bg: rgb(27, 119, 174);
+        --back-to-top-shadow: rgba(27, 119, 174, 0.4);
+        --icon-filter: none;
+        --icon-filter-hover: brightness(0.8);
     }
 }
