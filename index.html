@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pixel2stitch — Create embroidery patterns from photos</title>
+    <meta name="description"
+        content="Turn your photos into detailed cross-stitch or bead patterns. 8 brand palettes, editor, PDF export, iCloud sync.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="pixel2stitch — Create embroidery patterns from photos">
+    <meta property="og:description"
+        content="Turn your photos into detailed cross-stitch or bead patterns. 8 brand palettes, editor, PDF export, iCloud sync.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="pixel2stitch">
+    <meta property="og:url" content="https://pixel2stitch.github.io">
+    <meta property="og:image" content="https://pixel2stitch.github.io/assets/images/og-image.jpg">
+    <!-- Twitter Card (для X / Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="pixel2stitch — Create embroidery patterns from photos">
+    <meta name="twitter:description"
+        content="Turn your photos into detailed cross-stitch or bead patterns. 8 brand palettes, editor, PDF export, iCloud sync.">
+    <meta name="twitter:image" content="https://pixel2stitch.github.io/assets/images/og-image.jpg">
+    <meta name="twitter:site" content="@pixel2stitch">
+    <meta name="twitter:creator" content="@pixel2stitch">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/icon-180.png">
+</head>
+
+<body>
+    <!-- Theme Switcher -->
+    <div class="theme-switcher" role="toolbar" aria-label="Theme switcher">
+        <button class="theme-btn" data-theme="light" aria-label="Light theme">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+                <circle cx="12" cy="12" r="5" fill="currentColor" />
+                <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+            </svg>
+        </button>
+        <button class="theme-btn" data-theme="dark" aria-label="Dark theme">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+                <path
+                    d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.41 5.41 0 0 1-4.4 2.26 5.5 5.5 0 0 1-5.5-5.5c0-1.71.78-3.24 2-4.26A9.1 9.1 0 0 0 12 3z"
+                    fill="currentColor" />
+            </svg>
+        </button>
+        <button class="theme-btn active" data-theme="system" aria-label="System theme">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+                <rect x="2" y="3" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+                <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- App Icon with adaptive themes -->
+                <div class="app-icon">
+                    <img src="assets/images/appIcon_light.jpg" alt="pixel2stitch icon" width="256" height="256"
+                        class="app-icon-light">
+                    <img src="assets/images/appIcon_dark.jpg" alt="pixel2stitch icon" width="256" height="256"
+                        class="app-icon-dark">
+                </div>
+
+                <!-- App Info -->
+                <div class="app-info">
+                    <h1 class="app-name" data-i18n="appName">pixel2stitch</h1>
+                    <p class="app-subtitle" data-i18n="appSubtitle">Embroidery from photos + pattern library</p>
+
+                    <div class="app-info-row">
+                        <span class="info-item">
+                            <span class="info-label" data-i18n="appInfo.devicesLabel">Devices</span>
+                            <span class="info-value" data-i18n="appInfo.devicesValue">iPhone / iPad</span>
+                        </span>
+                        <span class="info-divider">|</span>
+                        <span class="info-item">
+                            <span class="info-label" data-i18n="appInfo.versionLabel">Version</span>
+                            <span class="info-value" data-i18n="appInfo.versionValue">2.2</span>
+                        </span>
+                        <span class="info-divider">|</span>
+                        <span class="info-item">
+                            <span class="info-label" data-i18n="appInfo.requiresLabel">Requires</span>
+                            <span class="info-value" data-i18n="appInfo.requiresValue">iOS 16+</span>
+                        </span>
+                        <span class="info-divider">|</span>
+                        <span class="info-item">
+                            <span class="info-label" data-i18n="appInfo.updatedLabel">Updated</span>
+                            <span class="info-value" data-i18n="appInfo.updatedValue">Aug 4, 2026</span>
+                        </span>
+                    </div>
+
+                    <div class="app-meta">
+                        <div class="rating">
+                            <span class="stars" data-i18n="ratingStars">★★★★☆</span>
+                            <span class="rating-value" data-i18n="ratingValue">4.7</span>
+                        </div>
+                        <span class="age-rating" data-i18n="ageRating">4+</span>
+                    </div>
+
+                    <p class="app-description" data-i18n="appDescription">
+                        Your photos — your pattern for creativity. pixel2stitch is the easiest way to turn your favorite
+                        photos into detailed cross-stitch or bead embroidery patterns. Plus, a huge library of
+                        ready-made patterns for every style and taste.
+                    </p>
+
+                    <!-- Download Button -->
+                    <div class="download-badge">
+                        <a href="https://apps.apple.com/app/id6753175525" target="_blank" rel="noopener noreferrer"
+                            class="badge-light" aria-label="Download on the App Store">
+                            <img src="https://toolbox.marketingtools.apple.com/api/assets/featured-content/apps/badges/badge-1/en-us.svg"
+                                alt="Download on the App Store" width="180" height="60">
+                        </a>
+                        <a href="https://apps.apple.com/app/id6753175525" target="_blank" rel="noopener noreferrer"
+                            class="badge-dark" aria-label="Download on the App Store">
+                            <img src="https://toolbox.marketingtools.apple.com/api/assets/featured-content/apps/badges/badge-2/en-us.svg"
+                                alt="Download on the App Store" width="180" height="60">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Back to Top button -->
+    <button id="backToTop" class="back-to-top" data-i18n-title="backToTop" data-i18n-aria="backToTop">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Features Sections -->
+    <main>
+        <!-- 1: Converter -->
+        <section class="feature-block" data-block="1">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-left">
+                        <div class="screenshot-wrapper">
+                            <img src="assets/images/screens/block1-main.jpg" alt="Converter screenshot"
+                                class="screenshot-main" loading="lazy">
+                        </div>
+                        <div class="feature-content">
+                            <h2 data-i18n="features.converter.title">Powerful & Accurate Converter</h2>
+                            <p data-i18n="features.converter.text">Upload photos from your gallery, camera, or
+                                clipboard.
+                                The app's algorithm accurately converts images into pixel patterns using official thread
+                                palettes from DMC, Anchor, Gamma, PNK Kirov, Madeira, Dimensions, Olympus, or Perler
+                                beads.<br>Several conversion modes are available depending on your image type (pixel
+                                art,
+                                logo, photograph).</p>
+                        </div>
+                    </div>
+                    <div class="feature-right">
+                        <div class="carousel">
+                            <div class="carousel-track">
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block1-1.jpg" alt="Screenshot 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block1-2.jpg" alt="Screenshot 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block1-3.jpg" alt="Screenshot 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block1-4.jpg" alt="Screenshot 4" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block1-5.jpg" alt="Screenshot 5" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev" aria-label="Previous">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M14.5 5L7.5 12L14.5 19" />
+                                </svg>
+                            </button>
+                            <button class="carousel-btn next" aria-label="Next">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9.5 5L16.5 12L9.5 19" />
+                                </svg>
+                            </button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2: Settings -->
+        <section class="feature-block" data-block="2">
+            <div class="container">
+                <div class="feature-grid reverse">
+                    <div class="feature-left">
+                        <div class="screenshot-wrapper">
+                            <img src="assets/images/screens/block2-main.jpg" alt="Control screenshot"
+                                class="screenshot-main" loading="lazy">
+                        </div>
+                        <div class="feature-content">
+                            <h2 data-i18n="features.control.title">Full Control Over Your Pattern</h2>
+                            <ul class="feature-list">
+                                <li data-i18n="features.control.text.1">Adjust complexity and detail — choose pattern
+                                    size from 25 to 320 elements in length.</li>
+                                <li data-i18n="features.control.text.2">Control your palette — limit the number of
+                                    colors for simplicity.</li>
+                                <li data-i18n="features.control.text.3">Select thread/bead manufacturer or use only
+                                    the colors you have in stock by creating your own material list.</li>
+                                <li data-i18n="features.control.text.4">Transparency support — upload PNG images
+                                    with transparent background if you don't want full coverage and plan to use your
+                                    fabric's color.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="feature-right">
+                        <div class="carousel">
+                            <div class="carousel-track">
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block2-1.jpg" alt="Screenshot 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block2-2.jpg" alt="Screenshot 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block2-3.jpg" alt="Screenshot 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block2-4.jpg" alt="Screenshot 4" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev" aria-label="Previous">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M14.5 5L7.5 12L14.5 19" />
+                                </svg>
+                            </button>
+                            <button class="carousel-btn next" aria-label="Next">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9.5 5L16.5 12L9.5 19" />
+                                </svg>
+                            </button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3: Editor -->
+        <section class="feature-block" data-block="3">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-left">
+                        <div class="screenshot-wrapper">
+                            <img src="assets/images/screens/block3-main.jpg" alt="Editor screenshot"
+                                class="screenshot-main" loading="lazy">
+                        </div>
+                        <div class="feature-content">
+                            <h2 data-i18n="features.editor.title">Smart Editor & Progress Tracking</h2>
+                            <p data-i18n="features.editor.text">Mark stitched crosses or placed beads right on the
+                                pattern.
+                                Track overall progress and advancement per color. Highlight a specific color from the
+                                palette across the entire pattern to focus on working with a particular
+                                material.<br>Nothing
+                                gets lost — the app automatically saves your progress as you work.</p>
+                        </div>
+                    </div>
+                    <div class="feature-right">
+                        <div class="carousel">
+                            <div class="carousel-track">
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block3-1.jpg" alt="Screenshot 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block3-2.jpg" alt="Screenshot 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block3-3.jpg" alt="Screenshot 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block3-4.jpg" alt="Screenshot 4" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block3-5.jpg" alt="Screenshot 5" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev" aria-label="Previous">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M14.5 5L7.5 12L14.5 19" />
+                                </svg>
+                            </button>
+                            <button class="carousel-btn next" aria-label="Next">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9.5 5L16.5 12L9.5 19" />
+                                </svg>
+                            </button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4: Library -->
+        <section class="feature-block" data-block="4">
+            <div class="container">
+                <div class="feature-grid reverse">
+                    <div class="feature-left">
+                        <div class="screenshot-wrapper">
+                            <img src="assets/images/screens/block4-main.jpg" alt="Library screenshot"
+                                class="screenshot-main" loading="lazy">
+                        </div>
+                        <div class="feature-content">
+                            <h2 data-i18n="features.library.title">Ready-Made Pattern Library</h2>
+                            <p data-i18n="features.library.text">Find your mood and inspiration — choose from a wide
+                                variety
+                                of ready-made patterns. Pick your style, size, select a palette, and start
+                                creating.<br>The
+                                catalog is constantly updated.<br><br>Your pattern with your author signature can also
+                                make
+                                it into the shared library if you submit it for review.</p>
+                        </div>
+                    </div>
+                    <div class="feature-right">
+                        <div class="carousel">
+                            <div class="carousel-track">
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block4-1.jpg" alt="Screenshot 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block4-2.jpg" alt="Screenshot 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block4-3.jpg" alt="Screenshot 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block4-4.jpg" alt="Screenshot 4" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block4-5.jpg" alt="Screenshot 5" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev" aria-label="Previous">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M14.5 5L7.5 12L14.5 19" />
+                                </svg>
+                            </button>
+                            <button class="carousel-btn next" aria-label="Next">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9.5 5L16.5 12L9.5 19" />
+                                </svg>
+                            </button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5: Features -->
+        <section class="feature-block" data-block="5">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-left">
+                        <div class="screenshot-wrapper">
+                            <img src="assets/images/screens/block5-main.jpg" alt="Export screenshot"
+                                class="screenshot-main" loading="lazy">
+                        </div>
+                        <div class="feature-content">
+                            <h2 data-i18n="features.export.title">Essential Tools</h2>
+                            <p data-i18n="features.export.text">🪡 Calculate exact floss length or bead count for each
+                                color
+                                to purchase the right amount with the material calculator.<br><br>📄 Export your pattern
+                                as
+                                ready-to-print PDF files, split into convenient pages.<br><br>📏 Set your desired fabric
+                                count to see the finished size not only in stitches but also in physical
+                                measurements.<br><br>🌗 The editor supports dark mode to reduce eye strain while you
+                                work.
+                                Multiple color combinations are also available for highlighting specific materials or
+                                marking completed sections.</p>
+                        </div>
+                    </div>
+                    <div class="feature-right">
+                        <div class="carousel">
+                            <div class="carousel-track">
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block5-1.jpg" alt="Screenshot 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block5-2.jpg" alt="Screenshot 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block5-3.jpg" alt="Screenshot 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block5-4.jpg" alt="Screenshot 4" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block5-5.jpg" alt="Screenshot 5" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev" aria-label="Previous">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M14.5 5L7.5 12L14.5 19" />
+                                </svg>
+                            </button>
+                            <button class="carousel-btn next" aria-label="Next">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9.5 5L16.5 12L9.5 19" />
+                                </svg>
+                            </button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6: Privacy (reverse) -->
+        <section class="feature-block" data-block="6">
+            <div class="container">
+                <div class="feature-grid reverse">
+                    <div class="feature-left">
+                        <div class="screenshot-wrapper">
+                            <img src="assets/images/screens/block6-main.jpg" alt="Privacy screenshot"
+                                class="screenshot-main" loading="lazy">
+                        </div>
+                        <div class="feature-content">
+                            <h2 data-i18n="features.privacy.title">Privacy & iCloud Sync</h2>
+                            <p data-i18n="features.privacy.text">Patterns are generated and stored locally on your
+                                device
+                                and are never shared with third parties. Your personal library is completely
+                                private. No sign-in is required.<br><br>Sync your patterns between iPhone and iPad via
+                                iCloud — start on one
+                                device,
+                                continue on another.</p>
+                        </div>
+                    </div>
+                    <div class="feature-right">
+                        <div class="carousel">
+                            <div class="carousel-track">
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block6-1.jpg" alt="Screenshot 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block6-2.jpg" alt="Screenshot 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide vertical">
+                                    <img src="assets/images/screens/block6-3.jpg" alt="Screenshot 3" loading="lazy">
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev" aria-label="Previous">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M14.5 5L7.5 12L14.5 19" />
+                                </svg>
+                            </button>
+                            <button class="carousel-btn next" aria-label="Next">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9.5 5L16.5 12L9.5 19" />
+                                </svg>
+                            </button>
+                            <div class="carousel-dots"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7: Final -->
+        <section class="feature-block highlight" data-block="7">
+            <div class="container">
+                <div class="feature-grid center">
+                    <div class="feature-content full-width">
+                        <h2 data-i18n="features.freedom.title">Complete Freedom — No Subscriptions</h2>
+                        <p data-i18n="features.freedom.text">No subscriptions, no in-app purchases. The only limit is
+                            your imagination. We believe creativity should be accessible to everyone. Start bringing
+                            your memories to life today!</p>
+                        <div class="download-badge centered">
+                            <a href="https://apps.apple.com/app/id6753175525" target="_blank" rel="noopener noreferrer"
+                                class="badge-light" aria-label="Download on the App Store">
+                                <img src="https://toolbox.marketingtools.apple.com/api/assets/featured-content/apps/badges/badge-1/en-us.svg"
+                                    alt="Download on the App Store" width="180" height="60">
+                            </a>
+                            <a href="https://apps.apple.com/app/id6753175525" target="_blank" rel="noopener noreferrer"
+                                class="badge-dark" aria-label="Download on the App Store">
+                                <img src="https://toolbox.marketingtools.apple.com/api/assets/featured-content/apps/badges/badge-2/en-us.svg"
+                                    alt="Download on the App Store" width="180" height="60">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="mailto:pixel2stitchapp@gmail.com" class="social-link" aria-label="Email" title="Email"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="assets/icons/email.svg" alt="" width="24" height="24">
+                    </a>
+                    <span class="social-divider">|</span>
+                    <a href="https://twitter.com/pixel2stitch" class="social-link" aria-label="X (Twitter)"
+                        title="X (Twitter)" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/icons/x-twitter.svg" alt="" width="28" height="28">
+                    </a>
+                    <span class="social-divider">|</span>
+                    <a href="https://www.instagram.com/pixel2stitch.app" class="social-link" aria-label="Instagram"
+                        title="Instagram" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/icons/instagram.svg" alt="" width="28" height="28">
+                    </a>
+                    <span class="social-divider">|</span>
+                    <a href="https://www.pinterest.com/pixel2stitch" class="social-link" aria-label="Pinterest"
+                        title="Pinterest" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/icons/pinterest.svg" alt="" width="28" height="28">
+                    </a>
+                    <span class="social-divider">|</span>
+                    <a href="https://t.me/pixel2stitch" class="social-link" aria-label="Telegram" title="Telegram"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="assets/icons/telegram.svg" alt="" width="28" height="28">
+                    </a>
+                </div>
+
+                <div class="footer-links">
+                    <a href="https://pixel2stitch.github.io/docs/pixel2stitch-privacy_en.html" target="_blank"
+                        rel="noopener noreferrer" data-i18n="footerPrivacy" class="footer-link">Privacy Policy</a>
+                    <span class="footer-divider">|</span>
+                    <a href="https://pixel2stitch.github.io/docs/pixel2stitch-terms_en.html" target="_blank"
+                        rel="noopener noreferrer" data-i18n="footerTerms" class="footer-link">Terms of Use</a>
+                </div>
+
+                <p class="footer-copy">
+                    &copy; 2026 <span data-i18n="footerAuthor">pixel2stitch</span><br>
+                    <span data-i18n="footerCopyright">All rights reserved</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/i18n.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/backToTop.js"></script>
+</body>
+
+</html>

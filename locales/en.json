@@ -1,0 +1,63 @@
+{
+    "meta": {
+        "title": "pixel2stitch — Create embroidery patterns from photos",
+        "description": "Turn your photos into detailed cross-stitch or bead patterns. 8 brand palettes, editor, PDF export, iCloud sync."
+    },
+    "appName": "pixel2stitch",
+    "appSubtitle": "Embroidery from photos + pattern library",
+    "ratingStars": "★★★★☆",
+    "ratingValue": "4.7",
+    "ageRating": "4+",
+    "appDescription": "Your photos — your pattern for creativity. pixel2stitch is the easiest way to turn your favorite photos into detailed cross-stitch or bead embroidery patterns. Plus, a huge library of ready-made patterns for every style and taste.",
+    "appInfo": {
+        "devicesLabel": "Devices",
+        "devicesValue": "iPhone / iPad",
+        "versionLabel": "Version",
+        "versionValue": "2.2",
+        "requiresLabel": "Requires",
+        "requiresValue": "iOS 16+",
+        "updatedLabel": "Updated",
+        "updatedValue": "Aug 4, 2026"
+    },
+    "footerEmail": "pixel2stitchapp@gmail.com",
+    "footerAuthor": "pixel2stitch",
+    "footerPrivacy": "Privacy Policy",
+    "footerTerms": "Terms of Use",
+    "footerCopyright": "All rights reserved",
+    "backToTop": "Back to top",
+    "features": {
+        "converter": {
+            "title": "Powerful & Accurate Converter",
+            "text": "Upload photos from your gallery, camera, or clipboard. The app's algorithm accurately converts images into pixel patterns using official thread palettes from DMC, Anchor, Gamma, PNK Kirov, Madeira, Dimensions, Olympus, or Perler beads.<br>Several conversion modes are available depending on your image type (pixel art, logo, photograph)."
+        },
+        "control": {
+            "title": "Full Control Over Your Pattern",
+            "text": {
+                "1": "Adjust complexity and detail — choose pattern size from 25 to 320 elements in length.",
+                "2": "Control your palette — limit the number of colors for simplicity.",
+                "3": "Select thread/bead manufacturer or use only the colors you have in stock by creating your own material list.",
+                "4": "Transparency support — upload PNG images with transparent background if you don't want full coverage and plan to use your fabric's color."
+            }
+        },
+        "editor": {
+            "title": "Smart Editor & Progress Tracking",
+            "text": "Mark stitched crosses or placed beads right on the pattern. Track overall progress and advancement per color. Highlight a specific color from the palette across the entire pattern to focus on working with a particular material.<br>Nothing gets lost — the app automatically saves your progress as you work."
+        },
+        "export": {
+            "title": "Essential Tools",
+            "text": "🪡 Calculate exact floss length or bead count for each color to purchase the right amount with the material calculator.<br><br>📄 Export your pattern as ready-to-print PDF files, split into convenient pages.<br><br>📏 Set your desired fabric count to see the finished size not only in stitches but also in physical measurements.<br><br>🌗 The editor supports dark mode to reduce eye strain while you work. Multiple color combinations are also available for highlighting specific materials or marking completed sections."
+        },
+        "library": {
+            "title": "Ready-Made Pattern Library",
+            "text": "Find your mood and inspiration — choose from a wide variety of ready-made patterns. Pick your style, size, select a palette, and start creating.<br>The catalog is constantly updated.<br><br>Your pattern with your author signature can also make it into the shared library if you submit it for review."
+        },
+        "privacy": {
+            "title": "Privacy & iCloud Sync",
+            "text": "Patterns are generated and stored locally on your device and are never shared with third parties. Your personal library is completely private. No sign-in is required.<br><br>Sync your patterns between iPhone and iPad via iCloud — start on one device, continue on another."
+        },
+        "freedom": {
+            "title": "Complete Freedom — No Subscriptions",
+            "text": "No subscriptions, no in-app purchases. The only limit is your imagination. We believe creativity should be accessible to everyone. Start bringing your memories to life today!"
+        }
+    }
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - pixel2stitch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(0deg, #FFFFFF 15%, #1B78AF 90%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .faq-content {
+            padding: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .question {
+            background: #f8f9fa;
+            padding: 20px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 1px solid #e9ecef;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question::after {
+            content: "▼";
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+
+        .question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .answer {
+            padding: 20px;
+            background: white;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .answer ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .answer li {
+            margin-bottom: 5px;
+        }
+
+        .contact-note {
+            background: #e8f4fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .faq-content {
+                padding: 20px;
+            }
+
+            .question {
+                padding: 15px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 FAQ</h1>
+            <p>Veelgestelde vragen over pixel2stitch</p>
+        </div>
+
+        <div class="faq-content">
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">Hoe krijg ik het beste resultaat bij het genereren?</div>
+                <div class="answer">
+                    <p>
+                        Gebruik grafische editors van derden voor afbeeldingen voordat u ze uploadt naar pixel2stitch.
+                        Pas bijsnijden toe, voeg contrast en levendigheid toe aan kleuren. Verwijder indien nodig de
+                        achtergrond.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="processing">
+                <div class="question">Worden afbeeldingen op mijn apparaat verwerkt?</div>
+                <div class="answer">
+                    <p>
+                        Ja, uw afbeeldingen en patronen worden nergens naartoe gestuurd; ze worden lokaal op uw apparaat
+                        verwerkt en opgeslagen.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">Is er compatibiliteit met editors van andere fabrikanten?</div>
+                <div class="answer">
+                    <p>
+                        Nee, momenteel kunt u geen editors van derden gebruiken om te werken met patronen die in
+                        pixel2stitch
+                        zijn gegenereerd.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="processing">
+                <div class="question">Hoe synchroniseer ik mijn patronen op iPhone en iPad?</div>
+                <div class="answer">
+                    <p>
+                        Vanaf versie 1.5 is iCloud-synchronisatie beschikbaar in de app.
+                        Schakel het in in de app-instellingen en uw patronen worden automatisch gesynchroniseerd tussen
+                        al uw
+                        apparaten.
+                        Deze functie kan ook worden gebruikt voor het back-uppen van uw werk.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="offline">
+                <div class="question">Werkt pixel2stitch zonder internetverbinding?</div>
+                <div class="answer">
+                    <p>
+                        Ja, het werkt. Maar voor het genereren van nieuwe patronen kan de app u vragen een advertentie
+                        te
+                        bekijken, waarvoor een internetverbinding nodig is.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="ads">
+                <div class="question">Wat moet ik doen als ik geen advertentie kan bekijken?</div>
+                <div class="answer">
+                    <p>
+                        In dat geval wordt de generatieteller na een week vanzelf gereset. U kunt de teller ook resetten
+                        door
+                        de app te verwijderen en opnieuw te installeren, maar dan verliest u al uw opgeslagen patronen.
+                    </p>
+                    <div class="contact-note">
+                        💡 <strong>Als er problemen zijn met het bekijken van advertenties in uw land</strong> -
+                        neem contact op met de ontwikkelaar en beschrijf uw probleem.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">Ik heb ideeën en suggesties voor de functionaliteit van de app. Wat moet ik doen?
+                </div>
+                <div class="answer">
+                    <p>Neem rechtstreeks contact met ons op en stuur uw opmerkingen en suggesties naar</p>
+                    <p><a href="mailto:pixel2stitchapp@gmail.com">pixel2stitchapp@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">Hoe kan ik het project ondersteunen?</div>
+                <div class="answer">
+                    <p>
+                        De beste ondersteuning voor het project is om erover te vertellen aan vrienden en kennissen.<br>
+                        Deel uw werk op Instagram met de hashtag #pixel2stitch<br>
+                        Bezoek onze website - daar is een sectie "Project ondersteunen"<br>
+                        En stuur uw voltooide werk zeker naar ons via e-mail - dat geeft ons nog meer motivatie voor
+                        ontwikkeling!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+
+                document.querySelectorAll('.question').forEach(q => {
+                    q.classList.remove('active');
+                    q.style.background = '#f8f9fa';
+                    q.style.color = '#2c3e50';
+                });
+
+                document.querySelectorAll('.answer').forEach(a => {
+                    a.style.display = 'none';
+                });
+
+                if (!isVisible) {
+                    answer.style.display = 'block';
+                    question.classList.add('active');
+                    question.style.background = '#1B78AF';
+                    question.style.color = 'white';
+                }
+            });
+        });
+
+        document.querySelectorAll('.answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

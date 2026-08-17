@@ -1,0 +1,517 @@
+/* ===== FEATURE BLOCKS ===== */
+.feature-block {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    transition: background 0.3s ease;
+}
+
+.feature-block:last-of-type {
+    border-bottom: none;
+}
+
+.feature-block.highlight {
+    background: var(--card-bg);
+    text-align: center;
+}
+
+/* ===== GRID ===== */
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.feature-grid.reverse {
+    direction: rtl;
+}
+
+.feature-grid.reverse>* {
+    direction: ltr;
+}
+
+.feature-grid.center {
+    grid-template-columns: 1fr;
+    text-align: center;
+    align-items: center;
+}
+
+/* ===== LEFT COLUMN: screenshot + text ===== */
+.feature-left {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-left .screenshot-wrapper {
+    margin: 0;
+}
+
+.feature-left .feature-content {
+    padding: 0;
+}
+
+/* ===== RIGHT COLUMN: carousel ===== */
+.feature-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== TEXT CONTENT ===== */
+.feature-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.feature-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 600px;
+}
+
+.feature-grid.center .feature-content p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* ===== SCREENSHOT (main, parallax) ===== */
+.screenshot-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow:
+        0 20px 60px var(--shadow-color),
+        0 0 0 12px var(--bg-secondary),
+        0 0 0 13px var(--border-color);
+    background: var(--placeholder-bg);
+    aspect-ratio: 4 / 3;
+    max-width: 600px;
+    width: 100%;
+}
+
+.screenshot-main {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+}
+
+/* ===== CAROUSEL ===== */
+.carousel {
+    --carousel-size: 400px;
+
+    position: relative;
+    overflow: hidden;
+    border-radius: calc(var(--carousel-size) / 5.66);
+    background: var(--card-bg);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    width: 100%;
+    max-width: var(--carousel-size);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    background: var(--placeholder-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.vertical {
+    aspect-ratio: 448 / 946;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: calc(var(--carousel-size) / 5.66);
+}
+
+/* ===== CAROUSEL BUTTONS ===== */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10;
+    padding: 0;
+    user-select: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover {
+    background: rgba(27, 119, 174, 0.85);
+    color: white;
+    border-color: rgba(27, 119, 174, 0.5);
+    box-shadow: 0 4px 20px rgba(27, 119, 174, 0.3);
+}
+
+.carousel-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+[data-theme="dark"] .carousel-btn {
+    background: rgba(44, 44, 46, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] .carousel-btn:hover {
+    background: rgba(58, 155, 213, 0.75);
+    border-color: rgba(58, 155, 213, 0.5);
+    box-shadow: 0 4px 20px rgba(58, 155, 213, 0.3);
+}
+
+.carousel-btn.prev {
+    left: 12px;
+}
+
+.carousel-btn.next {
+    right: 12px;
+}
+
+/* ===== CAROUSEL DOTS ===== */
+.carousel-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 20px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    pointer-events: all;
+}
+
+.carousel-dot.active {
+    background: #ffffff;
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* ===== HIGHLIGHT BLOCK ===== */
+.feature-block.highlight .download-badge {
+    justify-content: center;
+    display: flex;
+    gap: 12px;
+}
+
+.feature-block.highlight .download-badge a {
+    display: block;
+}
+
+.feature-block.highlight .download-badge img {
+    height: 60px;
+    width: auto;
+}
+
+/* ===== FEATURE LIST (висячий отступ) ===== */
+.feature-list {
+    list-style: disc;
+    padding-left: 24px;
+    margin: 0;
+    max-width: 600px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.feature-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== BACK TO TOP BUTTON ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(27, 119, 174, 0.75);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.9);
+    z-index: 999;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover {
+    background: rgb(27, 119, 174);
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 8px 30px rgba(27, 119, 174, 0.4);
+}
+
+.back-to-top:active {
+    transform: scale(0.92);
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .back-to-top {
+    background: rgba(58, 155, 213, 0.75);
+}
+
+[data-theme="dark"] .back-to-top:hover {
+    background: rgb(58, 155, 213);
+    box-shadow: 0 8px 30px rgba(58, 155, 213, 0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .feature-grid {
+        gap: 40px;
+    }
+
+    .screenshot-wrapper {
+        max-width: 400px;
+    }
+
+    .carousel {
+        --carousel-size: 360px;
+    }
+}
+
+@media (max-width: 720px) {
+    .feature-block {
+        padding: 60px 0;
+    }
+
+    .feature-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .feature-grid.reverse {
+        direction: ltr;
+    }
+
+    .feature-grid .feature-left,
+    .feature-grid .feature-right {
+        width: 100%;
+    }
+
+    .feature-grid .feature-right {
+        order: 1;
+    }
+
+    .feature-grid .feature-left {
+        order: -1;
+    }
+
+    .feature-grid .feature-left .screenshot-wrapper,
+    .feature-grid .feature-right .screenshot-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .feature-grid .feature-left .feature-content,
+    .feature-grid .feature-right .feature-content {
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .feature-grid .feature-left .feature-content h2,
+    .feature-grid .feature-right .feature-content h2 {
+        text-align: center;
+    }
+
+    .feature-grid .feature-left .feature-content p,
+    .feature-grid .feature-right .feature-content p {
+        margin: 0;
+    }
+
+    .feature-grid .feature-left .carousel,
+    .feature-grid .feature-right .carousel {
+        --carousel-size: 320px;
+        margin: 0 auto;
+    }
+
+    .feature-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .feature-content p {
+        font-size: 1rem;
+    }
+
+    .carousel-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 1.4rem;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+
+    .feature-list {
+        padding-left: 20px;
+    }
+
+    .feature-list li {
+        font-size: 1rem;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    .back-to-top svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-block {
+        padding: 40px 0;
+    }
+
+    .feature-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .feature-grid .feature-left .screenshot-wrapper,
+    .feature-grid .feature-right .screenshot-wrapper {
+        max-width: 320px;
+    }
+
+    .feature-grid .feature-left .carousel,
+    .feature-grid .feature-right .carousel {
+        --carousel-size: 280px;
+    }
+
+    .download-badge.centered {
+        justify-content: center;
+        display: flex;
+        gap: 12px;
+    }
+
+    .download-badge.centered a {
+        display: block;
+        transition: transform 0.2s ease;
+    }
+
+    .download-badge.centered a:hover {
+        transform: scale(1.05);
+    }
+
+    .download-badge.centered img {
+        height: 60px;
+        width: auto;
+    }
+
+    .feature-block.highlight .download-badge img {
+        height: 50px;
+    }
+
+    .feature-list {
+        padding-left: 18px;
+    }
+
+    .feature-list li {
+        font-size: 0.95rem;
+    }
+
+    .back-to-top {
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .back-to-top svg {
+        width: 18px;
+        height: 18px;
+    }
+}

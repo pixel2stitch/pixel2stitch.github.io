@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - pixel2stitch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(0deg, #FFFFFF 15%, #1B78AF 90%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .faq-content {
+            padding: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .question {
+            background: #f8f9fa;
+            padding: 20px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 1px solid #e9ecef;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question::after {
+            content: "▼";
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+
+        .question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .answer {
+            padding: 20px;
+            background: white;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .answer ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .answer li {
+            margin-bottom: 5px;
+        }
+
+        .contact-note {
+            background: #e8f4fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .faq-content {
+                padding: 20px;
+            }
+
+            .question {
+                padding: 15px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 FAQ</h1>
+            <p>pixel2stitch 자주 묻는 질문</p>
+        </div>
+
+        <div class="faq-content">
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">생성 결과를 최상으로 얻으려면 어떻게 해야 하나요?</div>
+                <div class="answer">
+                    <p>
+                        pixel2stitch에 업로드하기 전에 타사 그래픽 편집기를 사용하여 이미지를 편집하세요.
+                        자르기를 수행하고, 대비와 색상의 선명도를 추가하세요. 필요한 경우 배경을 제거하세요.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="processing">
+                <div class="question">이미지 처리는 제 기기에서 이루어지나요?</div>
+                <div class="answer">
+                    <p>
+                        네, 귀하의 이미지와 도안은 외부로 전송되지 않으며, 귀하의 기기에 로컬로 처리되고 저장됩니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">다른 제조사의 편집기와 호환되나요?</div>
+                <div class="answer">
+                    <p>
+                        아니요, 현재로서는 pixel2stitch에서 생성된 도안을 타사 편집기에서 사용할 수 없습니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="processing">
+                <div class="question">iPhone과 iPad에서 도안을 동기화하려면 어떻게 해야 하나요?</div>
+                <div class="answer">
+                    <p>
+                        버전 1.5부터 앱에 iCloud 동기화 기능이 추가되었습니다.
+                        앱 설정에서 iCloud 동기화를 활성화하면 도안이 모든 기기 간에 자동으로 동기화됩니다.
+                        이 기능은 작업물의 백업에도 사용할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="offline">
+                <div class="question">pixel2stitch는 인터넷 연결 없이도 작동하나요?</div>
+                <div class="answer">
+                    <p>
+                        네, 작동합니다. 하지만 새 도안을 생성할 때 앱이 광고 시청을 요청할 수 있으며,
+                        이 경우 인터넷 연결이 필요합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="ads">
+                <div class="question">광고를 시청할 수 없는 경우 어떻게 해야 하나요?</div>
+                <div class="answer">
+                    <p>
+                        이 경우 생성 카운터는 일주일 후에 자동으로 재설정됩니다. 앱을 삭제하고 다시 설치하여
+                        카운터를 재설정할 수도 있지만, 저장된 모든 도안이 손실됩니다.
+                    </p>
+                    <div class="contact-note">
+                        💡 <strong>귀하의 국가에서 광고 시청에 문제가 있는 경우</strong> -
+                        개발자에게 연락하여 문제를 설명해 주세요.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">앱 기능에 대한 아이디어와 제안이 있습니다. 어떻게 해야 하나요?</div>
+                <div class="answer">
+                    <p>직접 문의하시고 의견과 제안을 이메일로 보내주세요</p>
+                    <p><a href="mailto:pixel2stitchapp@gmail.com">pixel2stitchapp@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">프로젝트를 어떻게 지원할 수 있나요?</div>
+                <div class="answer">
+                    <p>
+                        프로젝트에 대한 최고의 지원은 지인들에게 이 앱을 알리는 것입니다.<br>
+                        Instagram에 해시태그 #pixel2stitch를 붙여 작업물을 공유해 주세요.<br>
+                        저희 웹사이트를 방문해 주세요. "프로젝트 지원" 섹션이 있습니다.<br>
+                        그리고 완성된 작업물을 꼭 이메일로 보내주세요. 그것이 개발에 더 큰 동기부여가 됩니다!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+
+                document.querySelectorAll('.question').forEach(q => {
+                    q.classList.remove('active');
+                    q.style.background = '#f8f9fa';
+                    q.style.color = '#2c3e50';
+                });
+
+                document.querySelectorAll('.answer').forEach(a => {
+                    a.style.display = 'none';
+                });
+
+                if (!isVisible) {
+                    answer.style.display = 'block';
+                    question.classList.add('active');
+                    question.style.background = '#1B78AF';
+                    question.style.color = 'white';
+                }
+            });
+        });
+
+        document.querySelectorAll('.answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

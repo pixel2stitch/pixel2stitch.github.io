@@ -1,0 +1,73 @@
+:root {
+    /* Light theme (default) */
+    --bg-primary: #f5f5f7;
+    --bg-secondary: #ffffff;
+    --text-primary: #1c1c1e;
+    --text-secondary: #6c6c70;
+    --border-color: #d1d1d6;
+    --accent-color: #1B77AE;
+    --card-bg: #ffffff;
+    --hero-bg: #f5f5f7;
+    --footer-bg: #f5f5f7;
+    --switcher-bg: rgba(255, 255, 255, 0.9);
+    --hover-bg: rgba(0, 0, 0, 0.05);
+    --placeholder-bg: #e5e5ea;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --icon-filter: none;
+    --icon-filter-hover: none;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1c1c1e;
+    --bg-secondary: #2c2c2e;
+    --text-primary: #f5f5f7;
+    --text-secondary: #8e8e93;
+    --border-color: #3a3a3c;
+    --accent-color: #1B77AE;
+    --card-bg: #2c2c2e;
+    --hero-bg: #1c1c1e;
+    --footer-bg: #1c1c1e;
+    --switcher-bg: rgba(44, 44, 46, 0.9);
+    --hover-bg: rgba(255, 255, 255, 0.05);
+    --placeholder-bg: #3a3a3c;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --icon-filter: brightness(1) invert(0.3);
+    --icon-filter-hover: brightness(0) invert(0.8);
+}
+
+/* System theme (follows OS) */
+@media (prefers-color-scheme: dark) {
+    [data-theme="system"] {
+        --bg-primary: #1c1c1e;
+        --bg-secondary: #2c2c2e;
+        --text-primary: #f5f5f7;
+        --text-secondary: #8e8e93;
+        --border-color: #3a3a3c;
+        --accent-color: #1B77AE;
+        --card-bg: #2c2c2e;
+        --hero-bg: #1c1c1e;
+        --footer-bg: #1c1c1e;
+        --switcher-bg: rgba(44, 44, 46, 0.9);
+        --hover-bg: rgba(255, 255, 255, 0.05);
+        --placeholder-bg: #3a3a3c;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    [data-theme="system"] {
+        --bg-primary: #f5f5f7;
+        --bg-secondary: #ffffff;
+        --text-primary: #1c1c1e;
+        --text-secondary: #6c6c70;
+        --border-color: #d1d1d6;
+        --accent-color: #1B77AE;
+        --card-bg: #ffffff;
+        --hero-bg: #f5f5f7;
+        --footer-bg: #f5f5f7;
+        --switcher-bg: rgba(255, 255, 255, 0.9);
+        --hover-bg: rgba(0, 0, 0, 0.05);
+        --placeholder-bg: #e5e5ea;
+        --shadow-color: rgba(0, 0, 0, 0.08);
+    }
+}

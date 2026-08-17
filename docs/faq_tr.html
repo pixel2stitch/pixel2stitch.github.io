@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - pixel2stitch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(0deg, #FFFFFF 15%, #1B78AF 90%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .faq-content {
+            padding: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .question {
+            background: #f8f9fa;
+            padding: 20px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 1px solid #e9ecef;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question::after {
+            content: "▼";
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+
+        .question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .answer {
+            padding: 20px;
+            background: white;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .answer ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .answer li {
+            margin-bottom: 5px;
+        }
+
+        .contact-note {
+            background: #e8f4fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .faq-content {
+                padding: 20px;
+            }
+
+            .question {
+                padding: 15px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 SSS</h1>
+            <p>pixel2stitch hakkında sık sorulan sorular</p>
+        </div>
+
+        <div class="faq-content">
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">Daha iyi oluşturma sonuçları nasıl elde edilir?</div>
+                <div class="answer">
+                    <p>
+                        Görüntüleri pixel2stitch'e yüklemeden önce üçüncü taraf grafik düzenleyicileri kullanın.
+                        Kırpma yapın, kontrast ve renklere canlılık katın. Gerekirse arka planı kaldırın.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="processing">
+                <div class="question">Görüntü işleme benim cihazımda mı yapılıyor?</div>
+                <div class="answer">
+                    <p>
+                        Evet, görüntüleriniz ve desenleriniz hiçbir yere aktarılmaz, cihazınızda yerel olarak işlenir ve
+                        saklanır.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">Diğer üreticilerin düzenleyicileriyle uyumluluk var mı?</div>
+                <div class="answer">
+                    <p>
+                        Hayır, şu anda pixel2stitch'te oluşturulan desenlerle çalışmak için üçüncü taraf düzenleyicileri
+                        kullanamazsınız.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="processing">
+                <div class="question">Desenlerimi iPhone ve iPad'de nasıl senkronize edebilirim?</div>
+                <div class="answer">
+                    <p>
+                        1.5 sürümünden itibaren, uygulamaya iCloud senkronizasyon özelliği eklendi.
+                        Uygulama ayarlarından etkinleştirin; desenleriniz tüm cihazlarınız arasında otomatik olarak
+                        senkronize olacaktır.
+                        Bu özellik, çalışmalarınızı yedeklemek için de kullanılabilir.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="offline">
+                <div class="question">pixel2stitch internet erişimi olmadan çalışır mı?</div>
+                <div class="answer">
+                    <p>
+                        Evet, çalışır. Ancak yeni desenler oluşturmak için uygulama sizden bir reklam izlemenizi
+                        isteyebilir, bu da internet bağlantısı gerektirir.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="ads">
+                <div class="question">Reklam izleme imkanım yoksa ne yapmalıyım?</div>
+                <div class="answer">
+                    <p>
+                        Bu durumda, oluşturma sayacı bir hafta içinde kendiliğinden sıfırlanacaktır. Ayrıca uygulamayı
+                        silip yeniden yükleyerek sayacı sıfırlayabilirsiniz, ancak bu durumda kaydedilmiş tüm
+                        desenlerinizi kaybedersiniz.
+                    </p>
+                    <div class="contact-note">
+                        💡 <strong>Ülkenizde reklam izlemede sorun yaşıyorsanız</strong> -
+                        geliştiriciyle iletişime geçin ve sorununuzu açıklayın.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">Uygulamanın işlevselliğiyle ilgili fikir ve önerilerim var. Ne yapmalıyım?</div>
+                <div class="answer">
+                    <p>Doğrudan bizimle iletişime geçin ve görüş ve önerilerinizi e-posta ile yazın</p>
+                    <p><a href="mailto:pixel2stitchapp@gmail.com">pixel2stitchapp@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="faq-item" id="compatibility">
+                <div class="question">Projeyi nasıl destekleyebilirim?</div>
+                <div class="answer">
+                    <p>
+                        Projeye en iyi destek, onu tanıdıklarınıza anlatmaktır.<br>
+                        Çalışmalarınızı Instagram'da #pixel2stitch etiketiyle paylaşın.<br>
+                        Web sitemizi ziyaret edin - orada "Projeyi Destekle" bölümü var.<br>
+                        Ve bitmiş çalışmalarınızı bize e-posta ile göndermeyi unutmayın - bu bize geliştirme için daha
+                        fazla motivasyon verecektir!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+
+                document.querySelectorAll('.question').forEach(q => {
+                    q.classList.remove('active');
+                    q.style.background = '#f8f9fa';
+                    q.style.color = '#2c3e50';
+                });
+
+                document.querySelectorAll('.answer').forEach(a => {
+                    a.style.display = 'none';
+                });
+
+                if (!isVisible) {
+                    answer.style.display = 'block';
+                    question.classList.add('active');
+                    question.style.background = '#1B78AF';
+                    question.style.color = 'white';
+                }
+            });
+        });
+
+        document.querySelectorAll('.answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
