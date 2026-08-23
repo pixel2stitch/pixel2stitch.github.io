@@ -73,10 +73,10 @@
         const termsLink = document.querySelector('.footer-links a[data-i18n="footerTerms"]');
 
         if (privacyLink) {
-            privacyLink.href = `https://amorfien.github.io/docs/pixel2stitch-privacy_${lang}.html`;
+            privacyLink.href = `https://pixel2stitch.github.io/docs/privacy_${lang}.html`;
         }
         if (termsLink) {
-            termsLink.href = `https://amorfien.github.io/docs/pixel2stitch-terms_${lang}.html`;
+            termsLink.href = `https://pixel2stitch.github.io/docs/terms_${lang}.html`;
         }
     }
 
