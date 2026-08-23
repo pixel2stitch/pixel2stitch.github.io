@@ -168,7 +168,7 @@ body {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 0;
 }
 
 /* App Info Row */
@@ -204,6 +204,37 @@ body {
     color: var(--border-color);
     font-size: 0.8rem;
     opacity: 0.5;
+}
+
+.app-rating-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    padding-right: 8px;
+    margin-bottom: 28px;
+}
+
+
+.app-free-badge {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent-color);
+    background: rgba(27, 119, 174, 0.08);
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+    border: 1px solid rgba(27, 119, 174, 0.15);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .app-free-badge {
+    background: rgba(58, 155, 213, 0.12);
+    border-color: rgba(58, 155, 213, 0.2);
+    color: #5ba9d9;
 }
 
 .rating {
@@ -244,6 +275,8 @@ body {
     display: flex;
     gap: 12px;
     margin-bottom: 12px;
+    justify-content: flex-end;
+    padding-right: 8px;
 }
 
 .download-badge a {
@@ -407,13 +440,23 @@ body {
     }
 
     .app-meta {
-        justify-content: center;
+        gap: 12px;
     }
 
     .app-info-row {
         gap: 8px;
         padding: 6px 0;
         justify-content: center;
+    }
+
+    .app-rating-row {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .app-free-badge {
+        font-size: 0.85rem;
+        padding: 3px 14px;
     }
 
     .info-item {

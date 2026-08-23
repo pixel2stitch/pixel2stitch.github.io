@@ -5,10 +5,11 @@
     },
     "appName": "pixel2stitch",
     "appSubtitle": "Embroidery from photos + pattern library",
+    "appFreeBadge": "Free to use · No subscription",
     "ratingStars": "★★★★☆",
     "ratingValue": "4.7",
     "ageRating": "4+",
-    "appDescription": "Your photos — your pattern for creativity. pixel2stitch is the easiest way to turn your favorite photos into detailed cross-stitch or bead embroidery patterns. Plus, a huge library of ready-made patterns for every style and taste.",
+    "appDescription": "Turn your photos into something you can stitch. pixel2stitch is the easiest way to turn your favorite photos into detailed cross-stitch or bead embroidery patterns. Plus, explore a growing library of ready-made patterns.",
     "appInfo": {
         "devicesLabel": "Devices",
         "devicesValue": "iPhone / iPad",
@@ -33,7 +34,7 @@
         "control": {
             "title": "Full Control Over Your Pattern",
             "text": {
-                "1": "Adjust complexity and detail — choose pattern size from 25 to 320 elements in length.",
+                "1": "Adjust complexity and detail — choose pattern size from 25 to 320 stitches across the long side.",
                 "2": "Control your palette — limit the number of colors for simplicity.",
                 "3": "Select thread/bead manufacturer or use only the colors you have in stock by creating your own material list.",
                 "4": "Transparency support — upload PNG images with transparent background if you don't want full coverage and plan to use your fabric's color."
@@ -57,7 +58,7 @@
         },
         "freedom": {
             "title": "Complete Freedom — No Subscriptions",
-            "text": "No subscriptions, no in-app purchases. The only limit is your imagination. We believe creativity should be accessible to everyone. Start bringing your memories to life today!"
+            "text": "No subscriptions, no in-app purchases. The only limit is your imagination. We believe creativity should be accessible to everyone. Start bringing your memories to life today!<br><br>pixel2stitch is free to use and supported by advertising.<br>No monthly plan is required to create and manage your patterns."
         }
     }
 }
