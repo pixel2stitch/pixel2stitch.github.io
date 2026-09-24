@@ -514,3 +514,55 @@
         height: 18px;
     }
 }
+
+/* ===== SCREENS PREVIEW SECTION ===== */
+.screens-preview {
+    padding: 60px 0;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.screens-preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.9fr 1fr;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.screens-preview-item {
+    position: relative;
+    transition: transform 0.4s ease;
+}
+
+.screens-preview-item img {
+    width: 144%;
+    height: auto;
+    display: block;
+}
+
+.screens-preview-item:hover {
+    transform: translateY(-6px);
+}
+
+.screens-preview-item:nth-child(1) { z-index: 1; }
+
+@media (max-width: 720px) {
+    .screens-preview {
+        padding: 32px 0;
+    }
+
+    .screens-preview-grid {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .screens-preview {
+        padding: 20px 0;
+    }
+
+    .screens-preview-grid {
+        max-width: 400px;
+    }
+}
