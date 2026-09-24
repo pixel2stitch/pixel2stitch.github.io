@@ -14,11 +14,11 @@
         "devicesLabel": "Устройства",
         "devicesValue": "iPhone / iPad",
         "versionLabel": "Версия",
-        "versionValue": "2.3",
+        "versionValue": "2.4",
         "requiresLabel": "Требуется",
-        "requiresValue": "iOS 16+",
+        "requiresValue": "iOS 17+",
         "updatedLabel": "Обновлено",
-        "updatedValue": "24 авг. 2026"
+        "updatedValue": "24 сен. 2026"
     },
     "footerEmail": "pixel2stitchapp@gmail.com",
     "footerAuthor": "pixel2stitch",
